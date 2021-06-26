@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ipfs:
+    container_name: ipfs
+    image: ipfs/go-ipfs:latest
+    environment:
+      - IPFS_PROFILE=server
+      - IPFS_PATH=/ipfsdata
+    volumes:
+      - ./data/ipfs:/ipfsdata
+    ports:
+      - "4001:4001"
+      - "8080:8080"
+      - "8081:8081"
+      - "5001:5001"
+
+
